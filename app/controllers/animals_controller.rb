@@ -4,6 +4,10 @@ class AnimalsController < ApplicationController
     render('animals/index.html.erb')
   end
 
+  def main
+    render('home/index.html.erb')
+  end
+
   def show
     @animal = Animal.find(params[:id])
     render('animals/show.html.erb')
@@ -22,7 +26,12 @@ class AnimalsController < ApplicationController
     else
       render('animals/new.html.erb')
     end
+  end
 
+  def destroy
+    @animal = Animal.find(params[:id])
+    @animal.destroy
+    render('animals/destroy.html.erb')
   end
 
 end
