@@ -18,7 +18,8 @@ class RegionsController < ApplicationController
     @region = Region.new(:name => params[:name])
 
     if @region.save
-      render('regions/success.html.erb')
+      flash[:notice] = 'Region Created'
+      redirect_to("/regions/#{@region.id}")
     else
       render('regions/new.html.erb')
     end
@@ -27,6 +28,7 @@ class RegionsController < ApplicationController
   def destroy
     @region = Region.find(params[:id])
     @region.destroy
+    flash[:notice] = "Region Destroyed"
     render('regions/destroy.html.erb')
   end
 
