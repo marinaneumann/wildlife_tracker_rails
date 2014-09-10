@@ -1,14 +1,6 @@
 <h1> New animal</h1>
 
-<% if @animal.errors.any? %>
-  <h3>Please fix these errors:</h3>
-  <ul>
-    <% @animal.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-
+<%= render('layouts/errors', :object => @animal) %>
 
 <form action="/animals" method="post">
   <label for="animal_name">Name</label>
