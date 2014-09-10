@@ -1,5 +1,5 @@
 WildlifeTracker::Application.routes.draw do
-  match('/', {:via => :get, :to => 'animals#main'})
+  match('/', {:via => :get, :to => 'trackers#index'})
   match('animals', {:via => :get, :to => 'animals#index'})
   match('animals', {:via => :post, :to => 'animals#create'})
   match('animals/new', {:via => :get, :to => 'animals#new'})

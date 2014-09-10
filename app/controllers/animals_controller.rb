@@ -4,10 +4,6 @@ class AnimalsController < ApplicationController
     render('animals/index.html.erb')
   end
 
-  def main
-    render('home/index.html.erb')
-  end
-
   def show
     @animal = Animal.find(params[:id])
     render('animals/show.html.erb')
