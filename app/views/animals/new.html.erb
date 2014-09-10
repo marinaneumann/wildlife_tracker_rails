@@ -3,8 +3,7 @@
 <%= render('layouts/errors', :object => @animal) %>
 
 <form action="/animals" method="post">
-  <label for="animal_name">Name</label>
-  <input id="animal_name" name ="name" type="text">
+  <%= render('form') %>
   <button class="btn btn-success"> Create animal</button>
 </form>
 

@@ -15,7 +15,7 @@ class AnimalsController < ApplicationController
   end
 
   def create
-    @animal = Animal.new(:name => params[:name])
+    @animal = Animal.new(params[:animal])
 
     if @animal.save
       flash[:notice] = "Animal Created"
@@ -30,6 +30,20 @@ class AnimalsController < ApplicationController
     @animal.destroy
     flash[:notice] = "Animal Destroyed"
     render('animals/destroy.html.erb')
+  end
+
+  def edit
+    @animal = Animal.find(params[:id])
+    render('animals/edit.html.erb')
+  end
+
+  def update
+    @animal = Animal.find(params[:id])
+    if @animal.update(params[:animal])
+      redirect_to("/animals/#{@animal.id}")
+    else
+      render('animals/edit.html.erb')
+    end
   end
 
 end

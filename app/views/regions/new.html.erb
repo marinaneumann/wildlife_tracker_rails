@@ -3,8 +3,7 @@
 <%= render('layouts/errors', :object => @region) %>
 
 <form action="/regions" method="post">
-  <label for="region_name">Name</label>
-  <input id="region_name" name="name" type="text">
+  <%= render('form') %>
   <button class="btn btn-success"> Create region</button>
 </form>
 

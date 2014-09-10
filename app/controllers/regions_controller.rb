@@ -15,7 +15,7 @@ class RegionsController < ApplicationController
   end
 
   def create
-    @region = Region.new(:name => params[:name])
+    @region = Region.new(params[:region])
 
     if @region.save
       flash[:notice] = 'Region Created'

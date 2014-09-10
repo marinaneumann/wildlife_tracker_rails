@@ -1,0 +1,9 @@
+<h1>Edit <%= @animal.name %></h1>
+
+<%= render('layouts/errors', :object => @animal) %>
+
+<form action="/animals/<%= @animal.id%>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <%= render('form') %>
+  <button class="btn btn-primary">Update Animal</button>
+</form>
