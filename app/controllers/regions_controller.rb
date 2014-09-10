@@ -32,4 +32,17 @@ class RegionsController < ApplicationController
     render('regions/destroy.html.erb')
   end
 
+  def edit
+    @region = Region.find(params[:id])
+    render('regions/edit.html.erb')
+  end
+
+  def update
+    @region = Region.find(params[:id])
+    if @region.update(params[:region])
+      redirect_to("/regions/#{@region.id}")
+    else
+      render('regions/edit.html.erb')
+    end
+  end
 end
