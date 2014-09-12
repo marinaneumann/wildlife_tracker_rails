@@ -1,10 +1,13 @@
 <h1> Sightings</h1>
-<!--
+
 <ul>
   <% @sightings.sort_by_region.each do |sighting| %>
-    <li><%= sighting.animal.name %> - <%= sighting.region.name %>
+    <li><a href="/sightings/<%= sighting.id %>"><%= sighting.animal.name %> - <%= sighting.region.name %></a>
     </li>
   <% end %>
-</ul> -->
+</ul>
+
+<p><a href="/sightings/new" class="btn btn-primary">New sighting</a></p>
+<p><a href="/" class ="btn btn-success">Home</a></p>
 
 

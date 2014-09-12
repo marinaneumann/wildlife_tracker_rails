@@ -1,0 +1,16 @@
+<%= render('layouts/errors', :object=> @sighting) %>
+
+<%= form_for(@sighting) do |f| %>
+
+  <%= f.collection_select :region_id, Region.all, :id, :name, prompt: "Select Region" %>
+  <%= f.collection_select :animal_id, Animal.all, :id, :name, prompt: "Select Animal" %>
+  <%= f.label :date %>
+  <%= f.text_field :date %>
+  <%= f.label :longitude %>
+  <%= f.text_field :longitude %>
+  <%= f.label :latitude %>
+  <%= f.text_field :latitude %>
+
+  <%= f.submit(:class => 'btn btn-success') %>
+<% end %>
+

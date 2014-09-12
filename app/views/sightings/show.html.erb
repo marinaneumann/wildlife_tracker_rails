@@ -1,0 +1,12 @@
+<h1><%= @sighting.region.name%> - <%= @sighting.animal.name%></h1>
+
+<p>Date:<%= @sighting.date %></p>
+<p>Longitude:<%= @sighting.longitude %></p>
+<p>Latitude:<%= @sighting.latitude%></p>
+
+<p><a href="/sightings/<%= @sighting.id %>"
+    data-confirm = "You sure?"
+    data-method = "delete"
+    rel="nofollow" class="btn btn-primary">Delete</a></p>
+<p><a href="/sightings" class="btn btn-danger">View Sightings</a></p>
+<p><a href="/sightings/<%= @sighting.id %>/edit" class="btn btn-warning">Edit</a></p>

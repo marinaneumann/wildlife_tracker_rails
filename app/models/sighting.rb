@@ -4,4 +4,8 @@ class Sighting < ActiveRecord::Base
 
   belongs_to :animal
   belongs_to :region
+
+  def self.sort_by_region
+    all.sort_by { |sighting| sighting.region.name }
+  end
 end

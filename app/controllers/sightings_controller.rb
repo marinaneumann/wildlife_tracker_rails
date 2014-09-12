@@ -29,7 +29,7 @@ class SightingsController < ApplicationController
     @sighting = Sighting.find(params[:id])
     @sighting.destroy
     flash[:notice]= "Sighting Destroyed"
-    render('sightings/destroy.html.erb')
+    redirect_to('/sightings')
   end
 
   def edit
